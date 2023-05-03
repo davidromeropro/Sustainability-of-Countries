@@ -1,170 +1,212 @@
 [
   {
+    "objectID": "index.html#modelos-matemáticos",
+    "href": "index.html#modelos-matemáticos",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Modelos Matemáticos",
+    "text": "Modelos Matemáticos\n\nSAFE (Sustainability Assessment by fuzzy evaluation): Usa la lógica difusa para calcular indicadores compuestos (salidas) que provienen de los indicadores básicos (entradas)-\nLos cálculos se realizan con palabras usando el conocimiento de expertos y se representa con reglas lingüística de la siguiente forma: si (entradas) entonces (salidas)\n\n\nEjemplo: \nsi\n‘Amenaza para los Mamíferos’ es Media\ny ‘Amenaza para las Aves’ es Fuerte\ny ‘Amenaza para las Plantas’ es Media\ny ‘Amenaza para los Peces’ es Débil\ny ‘Amenaza para los Reptiles’ es Fuerte\ny ‘Amenaza para los Anfibios’ es Fuerte\nentonces\nPR(BIOD) es Mala."
+  },
+  {
     "objectID": "index.html#limpieza-de-datos-inicial",
     "href": "index.html#limpieza-de-datos-inicial",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "Limpieza de datos inicial",
     "text": "Limpieza de datos inicial\n\n# Remove rows that won't be used\ndf = df.loc[df['level_of_development']!='Not Specified']\n\n# Fix data type\ndf['dt_date'] = pd.to_datetime(df['dt_date'])\n\n# Add Country Abreviations\ndf = pd.merge(df,country_abrev,left_on='country',right_on='name')\ndf.rename(columns={'alpha-3': 'abrev'},inplace=True)\ndf.drop(columns='name',inplace=True)"
   },
   {
     "objectID": "index.html#datos-faltantes",
     "href": "index.html#datos-faltantes",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "Datos Faltantes",
     "text": "Datos Faltantes\n\n\n\n\n\n\n\n\n\nindex\nmissing %\n# missing\n\n\n\n\n0\nMejorar políticas para el desarrollo sostenible\n99.31\n3174\n\n\n1\nPlanes de acción como políticas nacionales pri...\n97.65\n3121\n\n\n2\nTerritorio degradado sobre la superficie total\n96.46\n3083\n\n\n3\nEducación para el desarrollo sostenible\n95.06\n3038\n\n\n4\nNúmero de empresas publicando informes de sust...\n90.33\n2887\n\n\n5\nTasa de mortalidad\n80.10\n2560\n\n\n6\nSubsidios a los combustibles fósiles consumo y...\n70.49\n2253\n\n\n7\nEmisión de gases de efecto invernadero\n66.99\n2141"
   },
   {
     "objectID": "index.html#datos-faltantes-1",
     "href": "index.html#datos-faltantes-1",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "Datos Faltantes",
     "text": "Datos Faltantes\n\n\n\n\n\n\n\n\n\nindex\nmissing %\n# missing\n\n\n\n\n8\nGasto en investigación y desarrollo (% del PIB)\n56.48\n1805\n\n\n9\nTotal ingresos gubernamentales proporción del PIB\n30.82\n985\n\n\n10\nEmisiones de CO2 por quema de combustible\n26.63\n851\n\n\n11\nParticipación de las energías renovables en el...\n9.89\n316\n\n\n12\nProporción de la población que depende princip...\n6.73\n215\n\n\n13\nEntradas de Inversión Externa directa\n6.38\n204\n\n\n14\nTasa de crecimiento anual\n5.38\n172"
   },
   {
     "objectID": "index.html#mejorar-políticas-para-el-desarrollo-sostenible",
     "href": "index.html#mejorar-políticas-para-el-desarrollo-sostenible",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "1. Mejorar políticas para el desarrollo sostenible",
     "text": "1. Mejorar políticas para el desarrollo sostenible"
   },
   {
     "objectID": "index.html#planes-de-acción-como-políticas-nacionales-prioritarias",
     "href": "index.html#planes-de-acción-como-políticas-nacionales-prioritarias",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "2. Planes de acción como políticas nacionales prioritarias",
     "text": "2. Planes de acción como políticas nacionales prioritarias"
   },
   {
     "objectID": "index.html#territorio-degradado-sobre-la-superficie-total",
     "href": "index.html#territorio-degradado-sobre-la-superficie-total",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "3. Territorio degradado sobre la superficie total",
     "text": "3. Territorio degradado sobre la superficie total"
   },
   {
     "objectID": "index.html#educación-para-el-desarrollo-sostenible",
     "href": "index.html#educación-para-el-desarrollo-sostenible",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "4. Educación para el desarrollo sostenible",
     "text": "4. Educación para el desarrollo sostenible"
   },
   {
     "objectID": "index.html#número-de-empresas-publicando-informes-de-sustentabilidad",
     "href": "index.html#número-de-empresas-publicando-informes-de-sustentabilidad",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "5. Número de empresas publicando informes de sustentabilidad",
     "text": "5. Número de empresas publicando informes de sustentabilidad"
   },
   {
     "objectID": "index.html#tasa-de-mortalidad",
     "href": "index.html#tasa-de-mortalidad",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "6. Tasa de mortalidad",
     "text": "6. Tasa de mortalidad"
   },
   {
     "objectID": "index.html#subsidios-a-los-combustibles-fósiles-consumo-y-producción",
     "href": "index.html#subsidios-a-los-combustibles-fósiles-consumo-y-producción",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "7. Subsidios a los combustibles fósiles consumo y producción",
     "text": "7. Subsidios a los combustibles fósiles consumo y producción"
   },
   {
     "objectID": "index.html#gasto-en-investigación-y-desarrollo-del-pib",
     "href": "index.html#gasto-en-investigación-y-desarrollo-del-pib",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "8. Gasto en investigación y desarrollo (% del PIB)",
     "text": "8. Gasto en investigación y desarrollo (% del PIB)"
   },
   {
     "objectID": "index.html#total-ingresos-gubernamentales-proporción-del-pib",
     "href": "index.html#total-ingresos-gubernamentales-proporción-del-pib",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "9. Total ingresos gubernamentales proporción del PIB",
     "text": "9. Total ingresos gubernamentales proporción del PIB"
   },
   {
     "objectID": "index.html#emisiones-de-co2-por-quema-de-combustible",
     "href": "index.html#emisiones-de-co2-por-quema-de-combustible",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "10. Emisiones de CO2 por quema de combustible",
     "text": "10. Emisiones de CO2 por quema de combustible"
   },
   {
     "objectID": "index.html#participación-de-las-energías-renovables-en-el-consumo-total-de-energía",
     "href": "index.html#participación-de-las-energías-renovables-en-el-consumo-total-de-energía",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "11. Participación de las energías renovables en el consumo total de energía",
     "text": "11. Participación de las energías renovables en el consumo total de energía"
   },
   {
     "objectID": "index.html#proporción-de-la-población-que-depende-principalmente-de-combustibles-limpios",
     "href": "index.html#proporción-de-la-población-que-depende-principalmente-de-combustibles-limpios",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "12. Proporción de la población que depende principalmente de combustibles limpios",
     "text": "12. Proporción de la población que depende principalmente de combustibles limpios"
   },
   {
     "objectID": "index.html#entradas-de-inversión-externa-directa",
     "href": "index.html#entradas-de-inversión-externa-directa",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "13. Entradas de Inversión Externa directa",
     "text": "13. Entradas de Inversión Externa directa"
   },
   {
     "objectID": "index.html#emisión-de-gases-de-efecto-invernadero",
     "href": "index.html#emisión-de-gases-de-efecto-invernadero",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "14. Emisión de gases de efecto invernadero",
     "text": "14. Emisión de gases de efecto invernadero"
   },
   {
     "objectID": "index.html#tasa-de-crecimiento-anual",
     "href": "index.html#tasa-de-crecimiento-anual",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "15. Tasa de crecimiento anual",
     "text": "15. Tasa de crecimiento anual"
   },
   {
     "objectID": "index.html#tratamiento-de-datos-faltantes",
     "href": "index.html#tratamiento-de-datos-faltantes",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "Tratamiento de datos faltantes",
-    "text": "Tratamiento de datos faltantes\n\n# Group by country and take the latest value available\nlatest_values = df.groupby('country').last().reset_index()\n\n\nNo se aplica ninguna técnica de imputación debido a que no es posible estimar con certeza los indicadores. Además, no es viable aplicar la regresión lineal debido a que los valores son complejos y no presentan un comportamiento lineal.\nDurante el periodo de tiempo correspondiente a la base de datos, no se observó cambio alguno en el nivel de desarrollo de los países incluidos en la misma.\nSe tomó el valor más reciente disponible de cada indicador para cada país."
+    "text": "Tratamiento de datos faltantes\n\nNo se aplica ninguna técnica de imputación debido a que no es posible estimar con certeza los indicadores. Además, no es viable aplicar la regresión lineal debido a que los valores son complejos y no presentan un comportamiento lineal.\nDurante el periodo de tiempo correspondiente a la base de datos, no se observó cambio alguno en el nivel de desarrollo de los países incluidos en la misma.\nSe tomó el valor más reciente disponible de cada indicador para cada país.\n\n\n\n# Group by country and take the latest value available\nlatest_values = df.groupby('country').last().reset_index()"
   },
   {
     "objectID": "index.html#datos-faltantes-2",
     "href": "index.html#datos-faltantes-2",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "Datos Faltantes",
     "text": "Datos Faltantes\n\n\n\n\n\n\n\n\n\nindex\nmissing %\n# missing\n\n\n\n\n0\nMejorar políticas para el desarrollo sostenible\n86.25\n138\n\n\n1\nNúmero de empresas publicando informes de sust...\n57.50\n92\n\n\n2\nPlanes de acción como políticas nacionales pri...\n53.12\n85\n\n\n3\nTerritorio degradado sobre la superficie total\n29.38\n47\n\n\n4\nEmisión de gases de efecto invernadero\n26.88\n43\n\n\n5\nGasto en investigación y desarrollo (% del PIB)\n20.62\n33\n\n\n6\nEmisiones de CO2 por quema de combustible\n18.12\n29\n\n\n7\nTotal ingresos gubernamentales proporción del PIB\n10.62\n17"
   },
   {
     "objectID": "index.html#datos-faltantes-3",
     "href": "index.html#datos-faltantes-3",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "Datos Faltantes",
     "text": "Datos Faltantes\n\n\n\n\n\n\n\n\n\nindex\nmissing %\n# missing\n\n\n\n\n8\nProporción de la población que depende princip...\n1.88\n3\n\n\n9\nSubsidios a los combustibles fósiles consumo y...\n1.25\n2\n\n\n10\nEducación para el desarrollo sostenible\n1.25\n2\n\n\n11\nTasa de mortalidad\n0.62\n1\n\n\n12\nEntradas de Inversión Externa directa\n0.62\n1\n\n\n13\ncountry\n0.00\n0\n\n\n14\nParticipación de las energías renovables en el...\n0.00\n0"
   },
   {
+    "objectID": "index.html#indicadores-top-ecuador",
+    "href": "index.html#indicadores-top-ecuador",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Indicadores (Top & Ecuador)",
+    "text": "Indicadores (Top & Ecuador)"
+  },
+  {
+    "objectID": "index.html#indicadores-top-ecuador-1",
+    "href": "index.html#indicadores-top-ecuador-1",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Indicadores (Top & Ecuador)",
+    "text": "Indicadores (Top & Ecuador)"
+  },
+  {
     "objectID": "index.html#procesamiento-de-datos",
     "href": "index.html#procesamiento-de-datos",
-    "title": "SUSTENTABILIDAD",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "Procesamiento de datos",
-    "text": "Procesamiento de datos\n\n# Encode target class\nencoder = LabelEncoder()\nencoder.fit(latest_values['level_of_development'])\nlatest_values['level_of_development_encoded'] = encoder.transform(latest_values['level_of_development'])\n# Dictionary of encoded labels\nencoder_name_mapping = dict(zip(encoder.transform(encoder.classes_),encoder.classes_))\n\n\ncleaned = latest_values.copy()\n\n# Drop columns that have too many missing values\ncleaned.drop(columns = ['enhance_policy_coherence_for_sustainable_development', 'number_of_companies_publishing_sustainability_reports', 'national_action_plans_as_priority_national_policies'], inplace=True)\n\n# Drop rows that have missing values\nfeatures_to_exclude  = ['land_degraded_over_total_land_area',\n       'greenhousegas_emissione_mtco2equivalent',\n       'randd_expenditure_proportionofgdp_perc',\n       'co2emissions_from_fuel_combustion_in_millions_of_tonnes',\n       'total_government_revenue_proportion_of_gdp_perc']\n\ncleaned = cleaned.drop(columns=features_to_exclude).dropna(how='any')\n\n# Drop columns that won't be used.\ncleaned.drop(columns = ['dt_year', 'dt_date', 'region'],inplace=True)"
+    "text": "Procesamiento de datos\n\nencoder = LabelEncoder()\nencoder.fit(latest_values['level_of_development'])\nlatest_values['level_of_development_encoded'] = encoder.transform(latest_values['level_of_development'])\n\n# Drop columns that have too many missing values\ncleaned = latest_values.copy()\ncleaned.drop(columns = ['enhance_policy_coherence_for_sustainable_development', 'number_of_companies_publishing_sustainability_reports', 'national_action_plans_as_priority_national_policies'], inplace=True)\n\n# Drop rows that have missing values\nfeatures_to_exclude  = ['land_degraded_over_total_land_area',\n       'greenhousegas_emissione_mtco2equivalent',\n       'randd_expenditure_proportionofgdp_perc',\n       'co2emissions_from_fuel_combustion_in_millions_of_tonnes',\n       'total_government_revenue_proportion_of_gdp_perc']\n\ncleaned = cleaned.drop(columns=features_to_exclude).dropna(how='any')\n\n# Drop columns that won't be used.\ncleaned.drop(columns = ['dt_year', 'dt_date', 'region'],inplace=True)"
   },
   {
-    "objectID": "index.html#modelo-supervisado",
-    "href": "index.html#modelo-supervisado",
-    "title": "SUSTENTABILIDAD",
-    "section": "Modelo Supervisado",
-    "text": "Modelo Supervisado\n\n# Drop categorical columns that won't be used\ncountries = cleaned[['country', 'abrev']]\ncleaned = cleaned.drop(columns=['country','level_of_development','abrev'])\n\n# Prepare data for supervised training\ny = cleaned['level_of_development_encoded'].astype(np.int64)\nX = cleaned.drop(columns = ['level_of_development_encoded']).astype(np.float64)\n\n# Train test split\nX_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0, test_size=0.3, stratify = y)\n\n# Instantiate Standard Scaler\nscaler = StandardScaler()\nscaler.fit(X_train)\nX_train_scaled = scaler.transform(X_train)\nX_test_scaled = scaler.transform(X_test)\n\nlgb = LGBMClassifier()\nlgb.fit(X_train_scaled, y_train)\n\nLGBMClassifier()In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.LGBMClassifierLGBMClassifier()"
+    "objectID": "index.html#modelo-supervisado---resultados",
+    "href": "index.html#modelo-supervisado---resultados",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Modelo Supervisado - Resultados",
+    "text": "Modelo Supervisado - Resultados"
   },
   {
-    "objectID": "index.html#resultados",
-    "href": "index.html#resultados",
-    "title": "SUSTENTABILIDAD",
-    "section": "Resultados",
-    "text": "Resultados\n\n\n\n                                                \n\n\n\n\nProyecto Final | D. Romero"
+    "objectID": "index.html#modelo-supervisado---resultados-1",
+    "href": "index.html#modelo-supervisado---resultados-1",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Modelo Supervisado - Resultados",
+    "text": "Modelo Supervisado - Resultados\n\n\n              precision    recall  f1-score   support\n\n           0       0.77      0.91      0.83        11\n           1       0.77      0.56      0.65        18\n           2       0.40      0.50      0.44         4\n           3       0.87      1.00      0.93        13\n\n    accuracy                           0.76        46\n   macro avg       0.70      0.74      0.71        46\nweighted avg       0.76      0.76      0.75        46\n\n\n\n\nEn resumen, el modelo tiene un rendimiento generalmente bueno, aunque no excelente, y tiene una precisión y recall altos en la clase “Least Developed”, pero tiene un rendimiento relativamente bajo en la clase “Economies in Transition”."
+  },
+  {
+    "objectID": "index.html#modelo-no-supervisado---resultados",
+    "href": "index.html#modelo-no-supervisado---resultados",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Modelo No Supervisado - Resultados",
+    "text": "Modelo No Supervisado - Resultados"
+  },
+  {
+    "objectID": "index.html#modelo-no-supervisado---resultados-1",
+    "href": "index.html#modelo-no-supervisado---resultados-1",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Modelo No Supervisado - Resultados",
+    "text": "Modelo No Supervisado - Resultados"
+  },
+  {
+    "objectID": "index.html#modelo-no-supervisado---resultados-2",
+    "href": "index.html#modelo-no-supervisado---resultados-2",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Modelo No Supervisado - Resultados",
+    "text": "Modelo No Supervisado - Resultados"
   }
 ]
