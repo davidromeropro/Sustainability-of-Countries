@@ -7,13 +7,6 @@
     "text": "Modelos Matemáticos\n\nSAFE (Sustainability Assessment by fuzzy evaluation): Usa la lógica difusa para calcular indicadores compuestos (salidas) que provienen de los indicadores básicos (entradas)-\nLos cálculos se realizan con palabras usando el conocimiento de expertos y se representa con reglas lingüística de la siguiente forma: si (entradas) entonces (salidas)\n\n\nEjemplo: \nsi\n‘Amenaza para los Mamíferos’ es Media\ny ‘Amenaza para las Aves’ es Fuerte\ny ‘Amenaza para las Plantas’ es Media\ny ‘Amenaza para los Peces’ es Débil\ny ‘Amenaza para los Reptiles’ es Fuerte\ny ‘Amenaza para los Anfibios’ es Fuerte\nentonces\nPR(BIOD) es Mala."
   },
   {
-    "objectID": "index.html#limpieza-de-datos-inicial",
-    "href": "index.html#limpieza-de-datos-inicial",
-    "title": "Enfoque de Sustentabilidad con Machine Learning",
-    "section": "Limpieza de datos inicial",
-    "text": "Limpieza de datos inicial\n\n# Remove rows that won't be used\ndf = df.loc[df['level_of_development']!='Not Specified']\n\n# Fix data type\ndf['dt_date'] = pd.to_datetime(df['dt_date'])\n\n# Add Country Abreviations\ndf = pd.merge(df,country_abrev,left_on='country',right_on='name')\ndf.rename(columns={'alpha-3': 'abrev'},inplace=True)\ndf.drop(columns='name',inplace=True)"
-  },
-  {
     "objectID": "index.html#datos-faltantes",
     "href": "index.html#datos-faltantes",
     "title": "Enfoque de Sustentabilidad con Machine Learning",
@@ -137,7 +130,7 @@
     "href": "index.html#tratamiento-de-datos-faltantes",
     "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "Tratamiento de datos faltantes",
-    "text": "Tratamiento de datos faltantes\n\nNo se aplica ninguna técnica de imputación debido a que no es posible estimar con certeza los indicadores. Además, no es viable aplicar la regresión lineal debido a que los valores son complejos y no presentan un comportamiento lineal.\nDurante el periodo de tiempo correspondiente a la base de datos, no se observó cambio alguno en el nivel de desarrollo de los países incluidos en la misma.\nSe tomó el valor más reciente disponible de cada indicador para cada país.\n\n\n\n# Group by country and take the latest value available\nlatest_values = df.groupby('country').last().reset_index()"
+    "text": "Tratamiento de datos faltantes\n\nNo se aplica ninguna técnica de imputación debido a que no es posible estimar con certeza los indicadores. Además, no es viable aplicar la regresión lineal debido a que los valores son complejos y no presentan un comportamiento lineal.\nDurante el periodo de tiempo correspondiente a la base de datos, no se observó cambio alguno en el nivel de desarrollo de los países incluidos en la misma.\nSe tomó el valor más reciente disponible de cada indicador para cada país."
   },
   {
     "objectID": "index.html#datos-faltantes-2",
@@ -168,13 +161,6 @@
     "text": "Indicadores (Top & Ecuador)"
   },
   {
-    "objectID": "index.html#procesamiento-de-datos",
-    "href": "index.html#procesamiento-de-datos",
-    "title": "Enfoque de Sustentabilidad con Machine Learning",
-    "section": "Procesamiento de datos",
-    "text": "Procesamiento de datos\n\nencoder = LabelEncoder()\nencoder.fit(latest_values['level_of_development'])\nlatest_values['level_of_development_encoded'] = encoder.transform(latest_values['level_of_development'])\n\n# Drop columns that have too many missing values\ncleaned = latest_values.copy()\ncleaned.drop(columns = ['enhance_policy_coherence_for_sustainable_development', 'number_of_companies_publishing_sustainability_reports', 'national_action_plans_as_priority_national_policies'], inplace=True)\n\n# Drop rows that have missing values\nfeatures_to_exclude  = ['land_degraded_over_total_land_area',\n       'greenhousegas_emissione_mtco2equivalent',\n       'randd_expenditure_proportionofgdp_perc',\n       'co2emissions_from_fuel_combustion_in_millions_of_tonnes',\n       'total_government_revenue_proportion_of_gdp_perc']\n\ncleaned = cleaned.drop(columns=features_to_exclude).dropna(how='any')\n\n# Drop columns that won't be used.\ncleaned.drop(columns = ['dt_year', 'dt_date', 'region'],inplace=True)"
-  },
-  {
     "objectID": "index.html#modelo-supervisado---resultados",
     "href": "index.html#modelo-supervisado---resultados",
     "title": "Enfoque de Sustentabilidad con Machine Learning",
@@ -200,7 +186,7 @@
     "href": "index.html#modelo-no-supervisado---resultados-1",
     "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "Modelo No Supervisado - Resultados",
-    "text": "Modelo No Supervisado - Resultados"
+    "text": "Modelo No Supervisado - Resultados\n\n\nCluster 0\nAfghanistan, Angola, Bangladesh, Benin, Bhutan, Bosnia and Herzegovina, Botswana, nan, Burkina Faso, Cabo Verde, Cambodia, Canada, Central African Republic, Colombia, Comoros, Cyprus, Côte d'Ivoire, Egypt, El Salvador, Eritrea, Finland, France, Georgia, Ghana, Greece, Guatemala, Guinea, Guinea-Bissau, Guyana, Honduras, Japan, Kuwait, Kyrgyzstan, Lesotho, Luxembourg, Malaysia, Malta, Mauritania, Mauritius, Mexico, Myanmar, Namibia, Nepal, Nicaragua, Niger, Norway, Philippines, Poland, Qatar, Russian Federation, Senegal, Serbia, Singapore, Slovenia, Solomon Islands, Sudan, Sweden, Thailand, Turkmenistan, United Kingdom of Great Britain and Northern Ireland, United States of America\n\n\n\n\nCluster 1\nArgentina, Australia, Azerbaijan, Barbados, Belarus, Bolivia (Plurinational State of), Brunei Darussalam, Burundi, Chad, Congo, Costa Rica, Czechia, Djibouti, Dominican Republic, Ecuador, Germany, Indonesia, Iraq, Israel, Italy, Latvia, Madagascar, Mali, Montenegro, Netherlands, New Zealand, Panama, Papua New Guinea, Romania, Sierra Leone, South Africa, South Sudan, Spain, Switzerland, Syrian Arab Republic, Tajikistan, Togo, nan, Uganda, Ukraine, United Arab Emirates\n\n\n\n\nCluster 2\nAlgeria, Brazil, Chile, Ethiopia, Gambia, Hungary, Iceland, India, Iran (Islamic Republic of), Ireland, Malawi, Peru, Portugal, Rwanda, Trinidad and Tobago, Tunisia\n\n\n\n\nCluster 3\nAlbania, Armenia, Austria, Bahrain, Belgium, Cameroon, China, Croatia, nan, Denmark, Equatorial Guinea, Estonia, Gabon, Haiti, Jamaica, Jordan, Kiribati, Lao People's Democratic Republic, Liberia, Lithuania, Morocco, Mozambique, Nigeria, Pakistan, Paraguay, Sao Tome and Principe, Saudi Arabia, Slovakia, Somalia, Sri Lanka, Timor-Leste"
   },
   {
     "objectID": "index.html#modelo-no-supervisado---resultados-2",
@@ -208,5 +194,26 @@
     "title": "Enfoque de Sustentabilidad con Machine Learning",
     "section": "Modelo No Supervisado - Resultados",
     "text": "Modelo No Supervisado - Resultados"
+  },
+  {
+    "objectID": "index.html#modelo-no-supervisado---resultados-3",
+    "href": "index.html#modelo-no-supervisado---resultados-3",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Modelo No Supervisado - Resultados",
+    "text": "Modelo No Supervisado - Resultados"
+  },
+  {
+    "objectID": "index.html#modelo-no-supervisado---resultados-4",
+    "href": "index.html#modelo-no-supervisado---resultados-4",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Modelo No Supervisado - Resultados",
+    "text": "Modelo No Supervisado - Resultados\n\nCluster 0: Este grupo tiene entradas de inversión extranjera directa bajas o nulas, una tasa de crecimiento anual positiva, una baja proporción de la población que depende de combustibles limpios, una tasa de mortalidad relativamente alta, una baja proporción de energía renovable, altos subsidios a los combustibles fósiles y un bajo índice de educación para el desarrollo sostenible. Este grupo puede representar países o regiones que están menos desarrollados y tienen una gran dependencia de los combustibles fósiles para la energía, lo que resulta en altos niveles de contaminación del aire y mortalidad. La falta de inversión extranjera directa y el bajo índice de educación podrían sugerir un acceso limitado a recursos e inversión en desarrollo sostenible.\nCluster 1: este grupo tiene mayores flujos de inversión extranjera directa, una tasa de crecimiento anual negativa, una alta proporción de la población que depende de combustibles limpios, una baja tasa de mortalidad, una baja proporción de energía renovable, bajos subsidios a los combustibles fósiles y ningún índice de educación para el desarrollo sostenible. La alta dependencia de combustibles limpios y la baja tasa de mortalidad podrían indicar un nivel relativamente alto de desarrollo y acceso a los recursos, mientras que la baja proporción de energía renovable y la falta de educación para el desarrollo sostenible podrían sugerir la necesidad de una mayor inversión en desarrollo sostenible."
+  },
+  {
+    "objectID": "index.html#modelo-no-supervisado---resultados-5",
+    "href": "index.html#modelo-no-supervisado---resultados-5",
+    "title": "Enfoque de Sustentabilidad con Machine Learning",
+    "section": "Modelo No Supervisado - Resultados",
+    "text": "Modelo No Supervisado - Resultados\n\nCluster 2: este grupo tiene las mayores entradas de inversión extranjera directa, una tasa de crecimiento anual negativa, una alta proporción de la población que depende de combustibles limpios, una alta tasa de mortalidad, una proporción relativamente baja de energía renovable, altos subsidios a los combustibles fósiles y un alto índice de educación para el desarrollo sostenible. Este grupo puede representar países o regiones desarrollados con un nivel de vida relativamente alto y sistemas educativos sólidos que dan prioridad al desarrollo sostenible. Sin embargo, la alta tasa de mortalidad y los altos subsidios a los combustibles fósiles sugieren que hay margen de mejora en las políticas ambientales y de salud pública.\nCluster 3: Este conglomerado tiene entradas moderadas de inversión extranjera directa, una tasa de crecimiento anual negativa, la proporción más alta de la población que depende de combustibles limpios, una tasa de mortalidad relativamente baja, una proporción relativamente alta de energía renovable, subsidios moderados a los combustibles fósiles y alta Educación para el Desarrollo Sostenible. Este grupo puede representar países o regiones que dan prioridad al desarrollo sostenible y han avanzado en la transición a fuentes de energía más limpias. La alta dependencia de combustibles limpios, la baja tasa de mortalidad y el alto índice de educación sugieren un nivel de vida relativamente alto y un fuerte compromiso con el desarrollo sostenible. Sin embargo, la tasa de crecimiento anual negativa sugiere posibles desafíos económicos."
   }
 ]
